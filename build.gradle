@@ -31,6 +31,6 @@ configurations {
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
-//	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
+	compileOnly 'org.projectlombok:lombok:1.16.20'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
