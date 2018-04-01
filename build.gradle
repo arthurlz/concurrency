@@ -31,6 +31,7 @@ configurations {
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+	compile group: 'com.google.guava', name: 'guava', version: '24.1-jre'
 	compileOnly 'org.projectlombok:lombok:1.16.20'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }

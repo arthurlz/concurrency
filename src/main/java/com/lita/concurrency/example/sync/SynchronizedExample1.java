@@ -24,12 +24,13 @@ public class SynchronizedExample1 {
 
     public static void main(String[] args) {
         SynchronizedExample1 synchronizedExample1 = new SynchronizedExample1();
+        SynchronizedExample1 synchronizedExample2 = new SynchronizedExample1();
         ExecutorService executorService = Executors.newCachedThreadPool();
         executorService.execute(() -> {
-            synchronizedExample1.test2(1);
+            synchronizedExample1.test1(1);
         });
         executorService.execute(() -> {
-            synchronizedExample1.test2(2);
+            synchronizedExample2.test1(2);
         });
 //        synchronizedExample1.test2();
     }
