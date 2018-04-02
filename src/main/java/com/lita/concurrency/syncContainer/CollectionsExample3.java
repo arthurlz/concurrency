@@ -1,5 +1,6 @@
 package com.lita.concurrency.syncContainer;
 
+import com.google.common.collect.Maps;
 import com.lita.concurrency.annoations.ThreadSafe;
 import lombok.extern.slf4j.Slf4j;
 
@@ -21,7 +22,7 @@ public class CollectionsExample3 {
     // 同时并发执行的线程数
     public static int threadTotal = 200;
 
-    private static Map<Integer, Integer> map = Collections.synchronizedMap(new HashMap<>());
+    private static Map<Integer, Integer> map = Collections.synchronizedMap(Maps.newHashMap());
 
     public static void main(String[] args) throws Exception {
         ExecutorService executorService = Executors.newCachedThreadPool();

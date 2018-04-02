@@ -2,6 +2,7 @@ package com.lita.concurrency.syncContainer;
 
 import com.lita.concurrency.annoations.ThreadSafe;
 import lombok.extern.slf4j.Slf4j;
+import org.joda.time.DateTime;
 
 import java.util.HashMap;
 import java.util.Hashtable;
@@ -24,6 +25,9 @@ public class HashTableExample {
     private static Map<Integer, Integer> map = new Hashtable<>();
 
     public static void main(String[] args) throws Exception {
+        DateTime now = new DateTime();
+        now.getMillis();
+
         ExecutorService executorService = Executors.newCachedThreadPool();
         final Semaphore semaphore = new Semaphore(threadTotal);
         final CountDownLatch countDownLatch = new CountDownLatch(clientTotal);
@@ -43,6 +47,8 @@ public class HashTableExample {
         countDownLatch.await();
         executorService.shutdown();
         log.info("size:{}", map.size());
+        DateTime present = new DateTime();
+        log.info("time elapsed {}", present.getMillis() - now.getMillis());
     }
 
     private static void update(int i) {

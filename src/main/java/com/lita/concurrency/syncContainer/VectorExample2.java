@@ -32,6 +32,11 @@ public class VectorExample2 {
                     }
                 }
             };
+            Thread thread3 = new Thread() {
+                public void run () {
+
+                }
+            };
             thread1.start();
             thread2.start();
         }
