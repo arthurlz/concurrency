@@ -1,7 +1,6 @@
 package com.lita.concurrency.example.count;
 
 import com.lita.concurrency.annoations.NotThreadSafe;
-import com.lita.concurrency.annoations.Wanglei;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.CountDownLatch;
@@ -22,8 +21,6 @@ public class CountVolatile {
 
     public static AtomicLong count = new AtomicLong(0);
 
-    @Wanglei
-    private void test () {}
 
     public static void main(String[] args) {
         ExecutorService executorService = Executors.newCachedThreadPool();
